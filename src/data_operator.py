@@ -1,6 +1,6 @@
 import pandas as pd
 
-class DataOperator:
+class data_operator:
     def __init__(self, client, pair, interval, start_timestamp=None, end_timestamp=None, start_open_time=None, end_open_time=None):
         
         # alap attributumok
@@ -31,9 +31,14 @@ class DataOperator:
         self.raw_data = pd.DataFrame()
 
     def __repr__(self):
-        return (f"DataOperator(pair={self.pair}, interval={self.interval}, "
-                f"start_timestamp={self.start_timestamp}, end_timestamp={self.end_timestamp}, "
-                f"start_open_time={self.start_open_time}, end_open_time={self.end_open_time})")
+        return (f"data_operator(\n"
+                f"  pair={self.pair},\n"
+                f"  interval={self.interval},\n"
+                f"  start_timestamp={self.start_timestamp},\n"
+                f"  end_timestamp={self.end_timestamp},\n"
+                f"  start_open_time={self.start_open_time},\n"
+                f"  end_open_time={self.end_open_time}\n"
+                f")")
 
     def fetch_data(self):
         # Lekérdezzük az adatokat a Binance API-ról
@@ -59,4 +64,5 @@ class DataOperator:
         self.raw_data = df_temp
 
 
+## example calling ##
 
